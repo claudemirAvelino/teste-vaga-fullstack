@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link href="./output.css" rel="stylesheet">
+    <script src="./index.js"></script>
+</head>
+<body>
+<div class="min-h-screen flex items-center justify-center bg-gray-100">
+    <div class="max-w-sm rounded overflow-hidden shadow-lg bg-white">
+        <img class="w-full" src="./assets/images/cloud-upload.jpg" alt="Imagem do card">
+        <div class="px-6 py-4">
+            <div class="font-bold text-xl mb-4 text-center">Upload your CSV file</div>
+            <div id="upload-area" class="flex items-center justify-center w-full">
+                <label class="flex flex-col items-center px-4 py-6 bg-white rounded-lg shadow-lg tracking-wide border border-blue-500 cursor-pointer hover:bg-blue-500 hover:text-white text-blue-500">
+                    <svg class="w-8 h-8" fill="currentColor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
+                        <path d="M16.88 9.94l-4-4A1 1 0 0011.29 6h-1.59v5.29a1 1 0 102 0V7.41l3.29 3.29a1 1 0 001.42-1.42l-4-4a1 1 0 00-1.42 0l-4 4A1 1 0 009 9.94L6.71 7.71a1 1 0 00-1.42 1.42l4 4a1 1 0 001.42 0l4-4a1 1 0 000-1.42zM12.29 6a1 1 0 011.42 0l4 4a1 1 0 01-1.42 1.42L12 7.41v5.29a1 1 0 102 0V6z"/>
+                    </svg>
+                    <span class="mt-2 text-base leading-normal">Selecione um arquivo</span>
+                    <input type="file" id="file" class="hidden" multiple onchange="showSize()">
+                </label>
+            </div>
+            <div id="file-info" class="hidden mx-auto max-w-lg mt-8 p-6 bg-white rounded-lg shadow-lg border border-gray-300">
+                <h2 class="text-xl font-bold text-center mb-4">Informações do Arquivo</h2>
+
+                <ul class="list-disc list-inside text-gray-700">
+                    <li><strong>Pending Bytes to Upload:</strong> <span id="file-size"></span></li>
+                    <!--<li><strong>Nome do Arquivo:</strong> <span id="file-name"></span></li>
+                    <li><strong>Tipo:</strong> <span id="file-type"></span></li>-->
+                </ul>
+
+                <button class="mt-6 px-4 py-2 bg-blue-500 text-white font-semibold rounded-lg shadow-md hover:bg-blue-600 focus:outline-none" onclick="resetUpload()">Select other file</button>
+            </div>
+        </div>
+
+        <div class="px-6 pt-4 pb-2 flex justify-end">
+            <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded ml-2">Upload</button>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
