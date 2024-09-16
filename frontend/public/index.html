@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/3.0.4/socket.io.min.js" integrity="sha512-Jq1JnVXlkYQOYQpz31qIV/0l67d97J9I6sbILtfiSYX00Isr2zK7XDRmHW8d2iBTwNZfL7sHkHGT0EzLs90jdw==" crossorigin="anonymous"></script>
+    <script src="./app.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="min-h-screen bg-gray-100 flex justify-center items-center">
+<div class="bg-white p-6 rounded-lg shadow-md w-full max-w-md">
+    <h3 class="text-xl font-semibold mb-4 text-gray-800">Uploading files</h3>
+    <form id="form" method="POST" enctype="multipart/form-data" class="space-y-4">
+        <div class="mb-4">
+            <label class="flex flex-col items-center px-4 py-6 bg-white rounded-lg shadow-lg tracking-wide border border-blue-500 cursor-pointer hover:bg-blue-500 hover:text-white text-blue-500">
+                <svg class="w-8 h-8" fill="currentColor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
+                    <path d="M16.88 9.94l-4-4A1 1 0 0011.29 6h-1.59v5.29a1 1 0 102 0V7.41l3.29 3.29a1 1 0 001.42-1.42l-4-4a1 1 0 00-1.42 0l-4 4A1 1 0 009 9.94L6.71 7.71a1 1 0 00-1.42 1.42l4 4a1 1 0 001.42 0l4-4a1 1 0 000-1.42zM12.29 6a1 1 0 011.42 0l4 4a1 1 0 01-1.42 1.42L12 7.41v5.29a1 1 0 102 0V6z"/>
+                </svg>
+                <span class="mt-2 text-base leading-normal">Selecione um arquivo</span>
+                <input type="file" id="file" name="file" class="hidden" multiple onchange="showSize()">
+            </label>
+            <output class="block mt-2 text-sm text-gray-600" id="size"></output>
+            <output class="block mt-2 text-sm text-red-600" id="msg"></output>
+        </div>
+        <div class="flex space-x-4">
+            <button type="submit" class="bg-green-500 text-white px-4 py-2 rounded-md hover:bg-green-600 transition">Submit</button>
+            <button type="reset" class="bg-red-500 text-white px-4 py-2 rounded-md hover:bg-red-600 transition">Reset</button>
+        </div>
+    </form>
+</div>
+</body>
